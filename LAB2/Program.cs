@@ -15,20 +15,16 @@
                 return;
             }
 
-            // Читаємо дані з файлів
+           
             string labyrinth1 = File.ReadAllText(inputFilePath1);
             string labyrinth2 = File.ReadAllText(inputFilePath2);
 
-            // Використовуємо нову функцію для обробки рядка
             int result1 = ProcessLabyrinthFromString(labyrinth1);
             int result2 = ProcessLabyrinthFromString(labyrinth2);
 
-            // Записуємо результати у файли
             File.WriteAllText(outputFilePath1, result1.ToString());
             File.WriteAllText(outputFilePath2, result2.ToString());
         }
-
-        // Оригінальна функція, що використовує рядок як вхід
         public static int ProcessLabyrinthFromString(string input)
         {
             string[] lines = input.Trim().Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
