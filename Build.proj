@@ -1,18 +1,18 @@
 <Project DefaultTargets="BuildAndTest" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <!-- Ö³ëü äëÿ ïîáóäîâè ð³øåííÿ -->
+  <!-- Ã–Â³Ã«Ã¼ Ã¤Ã«Ã¿ Ã¯Ã®Ã¡Ã³Ã¤Ã®Ã¢Ã¨ Ã°Â³Ã¸Ã¥Ã­Ã­Ã¿ -->
   <Target Name="BuildSolution">
     <MSBuild Projects="CrossPlatform/CrossPlatform.sln" Targets="Build" />
   </Target>
 
-  <!-- Ö³ëü äëÿ çàïóñêó òåñò³â -->
+  <!-- Ã–Â³Ã«Ã¼ Ã¤Ã«Ã¿ Ã§Ã Ã¯Ã³Ã±ÃªÃ³ Ã²Ã¥Ã±Ã²Â³Ã¢ -->
   <Target Name="RunTests" DependsOnTargets="BuildSolution">
     <Exec Command="dotnet test LAB1.Tests/LAB1.Tests.csproj" />
 	<Exec Command="dotnet test LAB2.Tests/LAB2.Tests.csproj" />
     <Exec Command="dotnet test LAB3.Tests/LAB3.Tests.csproj" />
   </Target>
 
-  <!-- Ö³ëü äëÿ çàïóñêó ïðîåêòó LABS -->
+  <!-- Ã–Â³Ã«Ã¼ Ã¤Ã«Ã¿ Ã§Ã Ã¯Ã³Ã±ÃªÃ³ Ã¯Ã°Ã®Ã¥ÃªÃ²Ã³ LABS -->
   <Target Name="RunLABS" DependsOnTargets="BuildSolution">
    <Exec Command="dotnet run --project LAB1/LAB1/LAB1.csproj -- LAB1\INPUT.TXT" />
    <Exec Command="dotnet run --project LAB2/LAB2.csproj -- LAB2\INPUT1.TXT" />
@@ -20,7 +20,7 @@
    <Exec Command="dotnet run --project LAB3/LAB3.csproj -- LAB3\INPUT.TXT" />
   </Target>
 
-  <!-- Ö³ëü äëÿ ïîáóäîâè, òåñòóâàííÿ ³ çàïóñêó LABS -->
+  <!-- Ã–Â³Ã«Ã¼ Ã¤Ã«Ã¿ Ã¯Ã®Ã¡Ã³Ã¤Ã®Ã¢Ã¨, Ã²Ã¥Ã±Ã²Ã³Ã¢Ã Ã­Ã­Ã¿ Â³ Ã§Ã Ã¯Ã³Ã±ÃªÃ³ LABS -->
   <Target Name="BuildAndTest" DependsOnTargets="RunTests;RunLABS" />
   
 </Project>
