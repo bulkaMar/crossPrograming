@@ -51,6 +51,7 @@ class Program
 
         
         File.WriteAllText(outputFilePath, totalPermutations.ToString());
-        Console.WriteLine($"Кількість унікальних перестановок слова \"{word}\": {totalPermutations}");
+        Console.WriteLine("LAB #1");
+        Console.WriteLine($"The number of unique word permutations\"{word}\": {totalPermutations}");
     }
 }
