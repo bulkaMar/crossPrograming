@@ -4,13 +4,15 @@
 
 ## Інструкції з використання
 
-### Для побудови та запуску проєкту виконайте команду:
+### Для запуску проєкту виконайте команду:
 ```
-msbuild build.proj
-
+dotnet build Build.proj -t:Run -p:Solution=LAB1
 ```
 ### Для перевірки тестів виконайте наступну команду:
 ```
-dotnet test
-
+dotnet build Build.proj -t:Test -p:Solution=LAB1
+```
+### Для білда тестів виконайте наступну команду:
+```
+dotnet build Build.proj -t:Build -p:Solution=LAB1
 ```
