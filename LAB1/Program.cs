@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text;
 
 /*
     Задача полягає в тому, щоб знайти кількість різних перестановок (анаграм) даного слова з урахуванням повторень літер.
@@ -19,7 +20,7 @@ using System.Collections.Generic;
     Для слова "solo" використовую формулу яку написала вище. 
     Отже, довжина слова: n = 4.
     Далі підраховую кількість кожної унікальної літери всі літери, окрім 'o' зустрічаються один раз.
-окрім 'o'
+    окрім 'o'
     За формулою вище все пірахувала і вийшов такий результат: P = 4! / (1! * 2! * 1!) = 24 / 2 = 12.
 */
 
@@ -35,6 +36,7 @@ class Program
         string word = File.ReadAllText(inputFilePath).Trim();
 
         Dictionary<char, int> letterCount = word.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+        
         long Factorial(int n)
         {
             long result = 1;
@@ -47,6 +49,8 @@ class Program
         foreach (var count in letterCount.Values)
             totalPermutations /= Factorial(count);
 
+        
         File.WriteAllText(outputFilePath, totalPermutations.ToString());
+        Console.WriteLine($"Кількість унікальних перестановок слова \"{word}\": {totalPermutations}");
     }
 }
