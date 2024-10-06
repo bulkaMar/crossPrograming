@@ -25,11 +25,16 @@ using System.Collections.Generic;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        string word = File.ReadAllText(@"C:\Users\61sun\Source\Repos\crossPrograming\LAB1\INPUT.TXT").Trim();
-        Dictionary<char, int> letterCount = word.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+        Console.OutputEncoding = Encoding.UTF8;
 
+        string inputFilePath = args.Length > 0 ? args[0] : Path.Combine("LAB1", "INPUT.TXT");
+        string outputFilePath = Path.Combine("LAB1", "OUTPUT.TXT");
+
+        string word = File.ReadAllText(inputFilePath).Trim();
+
+        Dictionary<char, int> letterCount = word.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
         long Factorial(int n)
         {
             long result = 1;
@@ -42,7 +47,6 @@ class Program
         foreach (var count in letterCount.Values)
             totalPermutations /= Factorial(count);
 
-        string outputPath = @"C:\Users\61sun\Source\Repos\crossPrograming\LAB1\OUTPUT.TXT";
-        File.WriteAllText(outputPath, totalPermutations.ToString());
+        File.WriteAllText(outputFilePath, totalPermutations.ToString());
     }
 }
