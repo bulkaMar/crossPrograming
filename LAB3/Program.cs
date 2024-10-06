@@ -34,7 +34,7 @@ namespace LAB3
 
            
             File.WriteAllText(outputFilePath, isTree ? "YES" : "NO");
-
+            Console.WriteLine("LAB #3");
             Console.WriteLine(isTree ? "YES" : "NO");
         }
 
