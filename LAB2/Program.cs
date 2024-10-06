@@ -29,7 +29,7 @@ namespace LAB2
 
             File.WriteAllText(outputFilePath1, result1.ToString());
             File.WriteAllText(outputFilePath2, result2.ToString());
-             Console.WriteLine("LAB #1");
+             Console.WriteLine("LAB #2");
             Console.WriteLine($"Results for INPUT1.TXT: {result1}");
             Console.WriteLine($"Results for INPUT2.TXT: {result2}");
         }
