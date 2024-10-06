@@ -10,30 +10,28 @@ namespace LAB2
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            
             string inputFilePath1 = args.Length > 0 ? args[0] : Path.Combine("LAB2", "INPUT1.TXT");
             string inputFilePath2 = args.Length > 1 ? args[1] : Path.Combine("LAB2", "INPUT2.TXT");
             string outputFilePath1 = Path.Combine("LAB2", "OUTPUT1.TXT");
             string outputFilePath2 = Path.Combine("LAB2", "OUTPUT2.TXT");
 
-        
             if (!File.Exists(inputFilePath1) || !File.Exists(inputFilePath2))
             {
                 Console.WriteLine("Один або більше файлів не знайдено.");
                 return;
             }
 
-            
             string labyrinth1 = File.ReadAllText(inputFilePath1);
             string labyrinth2 = File.ReadAllText(inputFilePath2);
 
-            
             int result1 = ProcessLabyrinthFromString(labyrinth1);
             int result2 = ProcessLabyrinthFromString(labyrinth2);
 
-          
             File.WriteAllText(outputFilePath1, result1.ToString());
             File.WriteAllText(outputFilePath2, result2.ToString());
+
+            Console.WriteLine($"Результат для INPUT1.TXT: {result1}");
+            Console.WriteLine($"Результат для INPUT2.TXT: {result2}");
         }
 
         public static int ProcessLabyrinthFromString(string input)
