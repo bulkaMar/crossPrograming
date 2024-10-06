@@ -3,21 +3,24 @@
 //Вона рахує кількість ребер і перевіряє, чи дорівнює вона 𝑁 - 1 (обов'язкова умова для дерева).
 //Потім за допомогою DFS перевіряє зв'язність графа.
 //Якщо всі вершини досяжні й кількість ребер правильна, граф є деревом, і виводиться "YES". Інакше — "NO".
+using System;
+using System.IO;
+using System.Text;
+
 namespace LAB3
 {
     public class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            string inputFilePath = @"C:\Users\61sun\Source\Repos\crossPrograming\LAB3\INPUT.TXT";
-            string outputFilePath = @"C:\Users\61sun\Source\Repos\crossPrograming\LAB3\OUTPUT.TXT";
+            Console.OutputEncoding = Encoding.UTF8;
+            string inputFilePath = args.Length > 0 ? args[0] : Path.Combine("LAB3", "INPUT.TXT");
+            string outputFilePath = Path.Combine("LAB3", "OUTPUT.TXT");
 
-            
             var input = File.ReadAllLines(inputFilePath);
-            int N = int.Parse(input[0]); 
+            int N = int.Parse(input[0]);
             int[,] adjMatrix = new int[N, N];
 
-            
             for (int i = 1; i <= N; i++)
             {
                 var row = input[i].Split();
@@ -26,11 +29,8 @@ namespace LAB3
                     adjMatrix[i - 1, j] = int.Parse(row[j]);
                 }
             }
-
-           
             bool isTree = IsTree(adjMatrix, N);
 
-            
             File.WriteAllText(outputFilePath, isTree ? "YES" : "NO");
         }
 
@@ -85,5 +85,3 @@ namespace LAB3
         }
     }
 }
-
-
