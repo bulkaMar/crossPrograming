@@ -29,9 +29,13 @@ namespace LAB3
                     adjMatrix[i - 1, j] = int.Parse(row[j]);
                 }
             }
+
             bool isTree = IsTree(adjMatrix, N);
 
+           
             File.WriteAllText(outputFilePath, isTree ? "YES" : "NO");
+
+            Console.WriteLine(isTree ? "YES" : "NO");
         }
 
         public static bool IsTree(int[,] adjMatrix, int N)
