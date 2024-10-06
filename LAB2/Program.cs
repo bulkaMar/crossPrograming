@@ -17,7 +17,7 @@ namespace LAB2
 
             if (!File.Exists(inputFilePath1) || !File.Exists(inputFilePath2))
             {
-                Console.WriteLine("Один або більше файлів не знайдено.");
+                Console.WriteLine("One or more files not found.");
                 return;
             }
 
@@ -29,9 +29,9 @@ namespace LAB2
 
             File.WriteAllText(outputFilePath1, result1.ToString());
             File.WriteAllText(outputFilePath2, result2.ToString());
-
-            Console.WriteLine($"Результат для INPUT1.TXT: {result1}");
-            Console.WriteLine($"Результат для INPUT2.TXT: {result2}");
+             Console.WriteLine("LAB #1");
+            Console.WriteLine($"Results for INPUT1.TXT: {result1}");
+            Console.WriteLine($"Results for INPUT2.TXT: {result2}");
         }
 
         public static int ProcessLabyrinthFromString(string input)
