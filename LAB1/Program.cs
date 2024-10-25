@@ -23,35 +23,38 @@ using System.Text;
     окрім 'o'
     За формулою вище все пірахувала і вийшов такий результат: P = 4! / (1! * 2! * 1!) = 24 / 2 = 12.
 */
-
-class Program
-{
-    static void Main(string[] args)
+namespace LAB1 {
+    public class Program
     {
-        Console.OutputEncoding = Encoding.UTF8;
-
-        string inputFilePath = args.Length > 0 ? args[0] : Path.Combine("LAB1", "INPUT.TXT");
-        string outputFilePath = Path.Combine("LAB1", "OUTPUT.TXT");
-
-        string word = File.ReadAllText(inputFilePath).Trim();
-
-        Dictionary<char, int> letterCount = word.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
-        
-        long Factorial(int n)
+        static void Main(string[] args)
         {
-            long result = 1;
-            for (int i = 2; i <= n; i++)
-                result *= i;
-            return result;
+            Console.OutputEncoding = Encoding.UTF8;
+
+            string inputFilePath = args.Length > 0 ? args[0] : Path.Combine("LAB1", "INPUT.TXT");
+            string outputFilePath = Path.Combine("LAB1", "OUTPUT.TXT");
+
+            string word = File.ReadAllText(inputFilePath).Trim();
+
+            Dictionary<char, int> letterCount = word.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+
+            long Factorial(int n)
+            {
+                long result = 1;
+                for (int i = 2; i <= n; i++)
+                    result *= i;
+                return result;
+            }
+
+            long totalPermutations = Factorial(word.Length);
+            foreach (var count in letterCount.Values)
+                totalPermutations /= Factorial(count);
+
+
+            File.WriteAllText(outputFilePath, totalPermutations.ToString());
+            Console.WriteLine("LAB #1");
+            Console.WriteLine($"The number of unique word permutations\"{word}\": {totalPermutations}");
         }
-
-        long totalPermutations = Factorial(word.Length);
-        foreach (var count in letterCount.Values)
-            totalPermutations /= Factorial(count);
-
-        
-        File.WriteAllText(outputFilePath, totalPermutations.ToString());
-        Console.WriteLine("LAB #1");
-        Console.WriteLine($"The number of unique word permutations\"{word}\": {totalPermutations}");
     }
+
 }
+
