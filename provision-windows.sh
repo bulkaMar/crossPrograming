@@ -12,6 +12,9 @@ refreshenv
 # Verify installation
 dotnet --version
 
+# Додавання пакету MBulakh версії 1.0.0
+#dotnet add package MBulakh --version 1.0.0
+
 # Navigate to the project directory
 cd C:\project
 

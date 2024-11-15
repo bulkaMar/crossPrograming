@@ -2,8 +2,8 @@ Vagrant.configure("2") do |config|
   # Визначення IP-адрес для віртуальних машин
   hosts = {
     "linux" => "192.168.50.4",
-    "mac" => "192.168.50.5",  # Виправлено ключ для mac
-    "windows" => "192.168.50.6"  # Додайте IP-адресу для Windows
+    "mac" => "192.168.50.5",
+    "windows" => "192.168.50.6"
   }
 
   # Linux VM
@@ -29,8 +29,9 @@ Vagrant.configure("2") do |config|
     windows.vm.synced_folder ".", "C:/project"
     windows.vm.provision "shell", path: "provision-windows.sh"
   end
- # Mac Machine Configuration
-  config.vm.define "mac" do |mac| 
+
+  # Mac Machine Configuration
+  config.vm.define "mac" do |mac|
     mac.vm.box = "ramsey/macos-catalina"
     mac.vm.network "private_network", ip: hosts["mac"]
     mac.vm.provider "virtualbox" do |v|

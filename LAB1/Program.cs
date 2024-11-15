@@ -23,7 +23,8 @@ using System.Text;
     окрім 'o'
     За формулою вище все пірахувала і вийшов такий результат: P = 4! / (1! * 2! * 1!) = 24 / 2 = 12.
 */
-namespace LAB1 {
+namespace LAB1
+{
     public class Program
     {
         static void Main(string[] args)
@@ -35,6 +36,15 @@ namespace LAB1 {
 
             string word = File.ReadAllText(inputFilePath).Trim();
 
+            long totalPermutations = CalculateUniquePermutation(word);
+
+            File.WriteAllText(outputFilePath, totalPermutations.ToString());
+            Console.WriteLine("LAB #1");
+            Console.WriteLine($"The number of unique word permutations \"{word}\": {totalPermutations}");
+        }
+
+        public static long CalculateUniquePermutation(string word)
+        {
             Dictionary<char, int> letterCount = word.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
 
             long Factorial(int n)
@@ -49,12 +59,7 @@ namespace LAB1 {
             foreach (var count in letterCount.Values)
                 totalPermutations /= Factorial(count);
 
-
-            File.WriteAllText(outputFilePath, totalPermutations.ToString());
-            Console.WriteLine("LAB #1");
-            Console.WriteLine($"The number of unique word permutations\"{word}\": {totalPermutations}");
+            return totalPermutations;
         }
     }
-
 }
-
