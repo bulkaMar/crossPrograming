@@ -37,4 +37,14 @@ dotnet run run lab1 --input LAB1\INPUT.TXT --output LAB1\OUTPUT.TXT
 ![image](https://github.com/user-attachments/assets/850e1320-5494-4da2-a73d-f8bf6ad50f17)
 ![image](https://github.com/user-attachments/assets/c60a549f-e3c3-4302-be46-94e8f9491a21)
 
+### Лабораторна 6
+![image](https://github.com/user-attachments/assets/f5d04eae-c1b0-41ff-b98d-c95e5175cf7f)
+![image](https://github.com/user-attachments/assets/2f4ba909-aafc-4879-8bef-86b0be2b5ad5)
+![image](https://github.com/user-attachments/assets/419b7fbe-cb63-4254-a634-7a79e3ba7bd9)
+![image](https://github.com/user-attachments/assets/ec2ae8df-f307-4ac5-85e0-c29bd4b490b0)
+![image](https://github.com/user-attachments/assets/6eb17e50-f0d6-413c-8ac6-f205372334b4)
+![image](https://github.com/user-attachments/assets/7dfd1c33-c063-4d6c-bfd3-e69f00cec0e9)
+![image](https://github.com/user-attachments/assets/042c4822-a93d-49a4-af57-fba08e29600f)
+
+
 
