@@ -1,0 +1,23 @@
+﻿@model List<LAB5.Models.LAB6Models.Car>
+
+<h1>Список автомобілів</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Номер автомобіля</th>
+            <th>Модель</th>
+            <th>Власник</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.LicenceNumber</td>
+                <td>@car.Model.ModelName</td>
+                <td>@car.Customer.FirstName @car.Customer.LastName</td>
+            </tr>
+        }
+    </tbody>
+</table>

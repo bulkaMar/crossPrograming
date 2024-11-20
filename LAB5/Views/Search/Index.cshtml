@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Пошук";
+}
+
+<h1>Пошук</h1>
+
+<form asp-action="Results" method="post">
+    <label for="startDate">Дата початку:</label>
+    <input type="date" name="startDate" id="startDate" />
+
+    <label for="endDate">Дата завершення:</label>
+    <input type="date" name="endDate" id="endDate" />
+
+    <label for="carModelName">Модель автомобіля:</label>
+    <input type="text" name="carModelName" id="carModelName" />
+
+    <label for="manufacturerName">Виробник:</label>
+    <input type="text" name="manufacturerName" id="manufacturerName" />
+
+    <label for="licenceNumber">Номер автомобіля:</label>
+    <input type="text" name="licenceNumber" id="licenceNumber" />
+
+    <button type="submit">Шукати</button>
+</form>

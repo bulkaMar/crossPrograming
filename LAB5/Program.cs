@@ -1,4 +1,6 @@
 using Auth0.AspNetCore.Authentication;
+using LAB5.Controllers;
+using LAB5.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
@@ -43,6 +45,11 @@ builder.Services.AddAuthentication(options => {
 });
 
 builder.Services.AddAuthorization();
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<ManufacturerService>();
+builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<ServiceBookingService>();
+builder.Services.AddScoped<CarService>();
 
 var app = builder.Build();
 
@@ -58,6 +65,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
 
 app.UseAuthorization();
 

@@ -1,0 +1,26 @@
+﻿@model List<LAB5.Models.LAB6Models.ServiceBooking>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID бронювання сервісу</th>
+            <th>Ім'я клієнта</th>
+            <th>Номер ліцензії</th>
+            <th>Статус оплати</th>
+            <th>Дата та час</th>
+            <th>Деталі</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var serviceBooking in Model)
+        {
+            <tr>
+                <td>@serviceBooking.SvcBookingId</td>
+                <td>@serviceBooking.Customer.FirstName @serviceBooking.Customer.LastName</td>
+                <td>@serviceBooking.LicenceNumber</td>
+                <td>@(serviceBooking.PaymentReceivedYN ? "Так" : "Ні")</td>
+                <td>@serviceBooking.DateTimeOfService</td>
+            </tr>
+        }
+    </tbody>
+</table>

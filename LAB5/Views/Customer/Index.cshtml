@@ -1,0 +1,50 @@
+﻿@model List<LAB5.Models.LAB6Models.Customer>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ідентифікатор клієнта</th>
+            <th>Ім'я клієнта</th>
+            <th>Титул</th>
+            <th>Стать</th>
+            <th>Електронна пошта</th>
+            <th>Номер телефону</th>
+            <th>Адреса</th>
+            <th>Місто</th>
+            <th>Область</th>
+            <th>Інші дані</th>
+            <th>Автомобілі</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@customer.FirstName @customer.LastName</td> 
+                <td>@customer.Title</td>
+                <td>@customer.Gender</td>
+                <td>@customer.EmailAddress</td>
+                <td>@customer.PhoneNumber</td>
+                <td>@customer.AddressLine1 @customer.AddressLine2 @customer.AddressLine3</td> 
+                <td>@customer.City</td>
+                <td>@customer.State</td>
+                <td>@customer.OtherCustomerDetails</td>
+                <td>
+                    @if (customer.Cars != null && customer.Cars.Any())
+                    {
+                        @foreach (var car in customer.Cars)
+                        {
+                            <p>@car.LicenceNumber</p> 
+                        }
+                    }
+                    else
+                    {
+                        <p>Немає автомобілів</p> 
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

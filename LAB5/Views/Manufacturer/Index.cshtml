@@ -1,0 +1,22 @@
+﻿@model List<LAB5.Models.LAB6Models.Manufacturer>
+
+<h1>Список виробників</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Manufacturer Code</th>
+            <th>Manufacturer Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var manufacturer in Model)
+        {
+            <tr>
+                <td>@manufacturer.ManufacturerCode</td>
+                <td>@manufacturer.ManufacturerName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+        

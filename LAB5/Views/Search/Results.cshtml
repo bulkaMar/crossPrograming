@@ -1,0 +1,31 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Результати пошуку";
+}
+
+<h1>Результати пошуку</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Номер замовлення</th>
+            <th>Модель автомобіля</th>
+            <th>Виробник</th>
+            <th>Ім'я замовника</th>
+            <th>Дата обслуговування</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BookingId</td>
+                <td>@item.ModelName</td>
+                <td>@item.ManufacturerName</td>
+                <td>@item.CustomerName</td>
+                <td>@item.DateTimeOfService</td>
+            </tr>
+        }
+    </tbody>
+</table>
