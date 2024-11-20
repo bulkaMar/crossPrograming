@@ -45,6 +45,11 @@ dotnet run run lab1 --input LAB1\INPUT.TXT --output LAB1\OUTPUT.TXT
 ![image](https://github.com/user-attachments/assets/6eb17e50-f0d6-413c-8ac6-f205372334b4)
 ![image](https://github.com/user-attachments/assets/7dfd1c33-c063-4d6c-bfd3-e69f00cec0e9)
 ![image](https://github.com/user-attachments/assets/042c4822-a93d-49a4-af57-fba08e29600f)
+![image](https://github.com/user-attachments/assets/f872a591-f1a5-4e1f-892f-a27db5138735)
+![image](https://github.com/user-attachments/assets/a11c04d3-0288-4625-9211-a2b6edcd8307)
+![image](https://github.com/user-attachments/assets/c211360d-f286-400c-bd59-c2c1d93ea597)
+![image](https://github.com/user-attachments/assets/466c0c49-d021-4ee1-a59b-4b42bb10fab9)
+![image](https://github.com/user-attachments/assets/42ab72a9-749f-46ad-a74f-70577599b18a)
 
 
 
